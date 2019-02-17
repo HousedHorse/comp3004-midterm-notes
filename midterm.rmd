@@ -331,7 +331,7 @@ library(kableExtra)
 6. Testing
 1. Deployment and Maintenance
 
-\color{Black} 
+\color{black} 
 
 
 
