@@ -356,6 +356,7 @@ library(kableExtra)
 \vspace{-2em}
 \color{black}
 \hspace{1.5em}\sout{\hfill} Client Knowledge Reappears \hfill \hfill \hfill
+
 \color{ForestGreen}
 
 6. Testing
