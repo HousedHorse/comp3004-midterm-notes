@@ -275,7 +275,37 @@ library(kableExtra)
 \includegraphics[width=.8\textwidth]{tables/registerforclasserror.png}
 \end{table}
 
+\FloatBarrier
+
 ### FURPS+ Requirements (Tables)
+
+**F**unctional\
+**U**sability\
+**R**eliability\
+**P**erformance\
+**S**upportability\
+**+** Operation, Interface, Implementation, Packaging, Legal
+
+- see \autoref{fr} for a functional requirements table
+- see \autoref{nfr} for a non-functional requirements table
+
+\FloatBarrier
+
+\begin{table}
+\caption{An example functional requirements table.}
+\label{fr}
+\centering
+\includegraphics[width=.8\textwidth]{tables/fr.png}
+\end{table}
+
+\begin{table}
+\caption{An example non-functional requirements table.}
+\label{nfr}
+\centering
+\includegraphics[width=.8\textwidth]{tables/nfr.png}
+\end{table}
+
+\FloatBarrier
 
 ## Dynamic Model (Analysis)
 
