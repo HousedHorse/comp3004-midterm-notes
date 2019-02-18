@@ -372,6 +372,10 @@ library(kableExtra)
 
 ### Activity Diagrams
 
+![\label{activity}An example activity diagram.](dias/activity.png){height=30%}
+
+\FloatBarrier
+
 ## Object Model (Analysis)
 
 ### Class Diagrams
