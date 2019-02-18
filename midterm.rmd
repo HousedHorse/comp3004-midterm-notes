@@ -277,6 +277,8 @@ library(kableExtra)
 
 \FloatBarrier
 
+\newpage
+
 ### FURPS+ Requirements (Tables)
 
 **F**unctional\
@@ -285,6 +287,38 @@ library(kableExtra)
 **P**erformance\
 **S**upportability\
 **+** Operation, Interface, Implementation, Packaging, Legal
+
+- types of requirements
+  - functional
+    - what can the actors do?
+  - usability
+    - ease of use requirements
+    - measurable, specific
+  - reliability
+    - recovery from error
+    - stability
+    - security
+  - performance
+    - how the system performs under certain conditions
+    - specific, quantifiable
+    - realistic
+  - supportability
+    - what kinds of platforms/hardware can the system run on
+    - ability for future maintenance
+  - implementation
+    - implementation-specific requirements
+  - interface
+    - how the system interacts with the actors
+    - UI stuff that doesn't fall under usability
+    - how it interfaces with external systems
+  - operation
+    - which users are allowed to do what
+    - constraints on operation
+  - packaging
+    - how the system should be delivered to the customer
+  - legal
+    - any legal restrictions on the software
+
 
 - see \autoref{fr} for a functional requirements table
 - see \autoref{nfr} for a non-functional requirements table
@@ -309,9 +343,32 @@ library(kableExtra)
 
 ## Dynamic Model (Analysis)
 
+- state machines
+- sequence diagrams
+- activity diagrams
+
 ### State Machines
 
+- initial state
+  - dark circle
+- other states
+  - bubbles with verb phrases
+- transitions with labels
+  - "from initial" or "to final" optionally has no label
+- final state
+  - dark circle surrounded by light circle
+  - looks like a target
+- \autoref{state-machine} for an example
+
+![\label{state-machine}An example state machine diagram.](dias/state-machine.png){height=80%}
+
+\FloatBarrier
+
 ### Sequence Diagrams
+
+![\label{sequence}An example sequence diagram.](dias/sequence.png){height=90%}
+
+\FloatBarrier
 
 ### Activity Diagrams
 
