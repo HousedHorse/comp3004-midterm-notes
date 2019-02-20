@@ -382,9 +382,18 @@ library(kableExtra)
 
 ![\label{obj-chart}Inheritance, composition, and aggregation in UML class diagrams.](figs/object-model.png)
 
+![\label{class-dia}An example class diagram.](dias/class-diagram.png)
+
 \FloatBarrier
 
 ### Data Dictionaries
+
+\begin{table}
+\caption{An example data dictionary table.}
+\label{ddict}
+\centering
+\includegraphics[width=.8\textwidth]{tables/datadict.png}
+\end{table}
 
 ## Traceability
 
