@@ -349,15 +349,17 @@ library(kableExtra)
 
 ### State Machines
 
+- diagram for each use case
+- models system state
 - initial state
   - dark circle
+- final state
+  - dark circle surrounded by light circle
+  - looks like a target
 - other states
   - bubbles with verb phrases
 - transitions with labels
   - "from initial" or "to final" optionally has no label
-- final state
-  - dark circle surrounded by light circle
-  - looks like a target
 - \autoref{state-machine} for an example
 
 ![\label{state-machine}An example state machine diagram.](dias/state-machine.png){height=80%}
@@ -366,11 +368,29 @@ library(kableExtra)
 
 ### Sequence Diagrams
 
-![\label{sequence}An example sequence diagram.](dias/sequence.png){height=90%}
+- diagram for each use case
+- lifeline from each object
+  - actors and boundary objects get infinite lifeline
+  - other objects get destroyed with an X
+- rectangle to indicate "focus of control"
+- arrows with labels for actions
+  - `select()`
+  - `<<create>>`
+  - `notify()`
+  - `send()`
+  - etc.
+
+![\label{sequence}An example sequence diagram.](dias/sequence.png){height=71%}
 
 \FloatBarrier
 
 ### Activity Diagrams
+
+- diagram for each use case
+- bubbles represent use cases
+  - labeled with verb phrases
+  - connected with arrows
+- black bars to split and join arrows
 
 ![\label{activity}An example activity diagram.](dias/activity.png){height=30%}
 
@@ -378,7 +398,29 @@ library(kableExtra)
 
 ## Object Model (Analysis)
 
+- class diagrams
+- data dictionaries
+  - define objects
+  - list attributes and associations
+  - explain when an attribute is set
+
 ### Class Diagrams
+
+- relationships
+  - inheritance
+  - composition
+  - shared aggregation
+- associations
+  - directionality
+  - cardinality
+  - aggregation or composition
+- classes
+  - attributes
+  - operations
+- abstract classes
+  - italic names
+- instances
+  - \underline{\bfseries instance\_name:class\_name}
 
 ![\label{obj-chart}Inheritance, composition, and aggregation in UML class diagrams.](figs/object-model.png)
 
@@ -436,7 +478,7 @@ library(kableExtra)
 
 
 
-
+\newpage
 
 # Requirements Elicitation
 - what does the client want?
