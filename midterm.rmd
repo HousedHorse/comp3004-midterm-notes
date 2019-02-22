@@ -525,13 +525,6 @@ library(kableExtra)
   - logical = no run-time equivalent
   - physical = run-time equivalent
 
-### Coupling and Cohesion
-- coupling = how dependent is the subsystem on other subsystems?
-- cohesion = how dependent is the subsystem on its components
-- we want
-  - **high cohesion**
-  - **low coupling**
-
 ### Layers and Partitions
 
 - layer
@@ -549,19 +542,129 @@ library(kableExtra)
   - very loosely coupled
   - can operate independently of each other
 
+### Services and Subsystem Interfaces
+- class interface
+  - public operations of a class
+- subsystem interface
+  - public operations of all classes in the subsystem
+- service
+  - subset of related operations in a subsystem
+  - named with a noun phrase
+  - one subsystem can provide multiple services
+
+![An example of a service provided by Registration Mangement to Student Interface.](dias/service.png){height=30%}
+
+### Coupling and Cohesion
+- coupling = how dependent is the subsystem on other subsystems?
+- cohesion = how dependent is the subsystem on its components
+- we want
+  - **high cohesion**
+  - **low coupling**
+
 ### Architecture Styles
 - grouping subsystems at the highest level
 
 #### Repository
+- subsystems
+  - access and modify a single data structure
+  - independent
+  - communicate through the repository
+- control flow
+  - repository has triggers on data
+  - subsystems have repository locks
+- examples
+  - DBMS
+  - compilers
+- advantages
+  - new services easily added
+  - good for complex data processing
+- disadvantages
+  - bottleneck
+  - high coupling between repository and subsystems
 
 #### Model/view/controller (MVC)
+- model
+  - application domain knowledge
+  - independent of view and control
+- view
+  - display to user
+  - observer design pattern to propagate changes
+- control
+  - manage interaction sequences
+- special case of repository
+- example
+  - multiplayer games
+- advantages
+  - loose coupling between model and view
+  - maps well to boundary, entity, control
 
 #### Client-server
+- server
+  - provide services to client
+  - handle requests with
+    - remote procedure calls
+    - sockets
+- client
+  - interact with users
+- client and server are **independent**
+  - independent control flow
+  - synchronize only on requests and replies
+- can be a special case of repository
+- example
+  - central IT database
+- advantages
+  - distributed systems
+  - multiple clients and servers
 
 #### Peer-to-peer
+- generalization of client-server
+- a subsystem can be both client and server
+- subsystems
+  - independent control flows
+  - synchronize only on requests and replies
+- example
+  - database that requests and notifies of changes
+- advantages
+  - distributed systems
+  - multiple clients and servers
+- disadvantages
+  - deadlock if two send a request at the same time
 
 #### Three-tier
+- three layers
+- interface
+  - boundary
+- application
+  - control and entity
+  - processing and notification
+- storage
+  - persistent storage of data
+  - can be shared by multiple applications
+- example
+  - cuACS
 
 #### Four-tier
+- just like three-tier but:
+  - interface layer is separated into:
+    - presentation client layer
+    - presentation server layer
+- different clients $\implies$ different UIs
+  - common data across all UIs is handled by the presentation server layer
+- example
+  - web browser
 
 #### Pipe and filter
+- filters
+  - subsystems
+- pipes
+  - association between subsystems
+- filters are independent
+  - synchronized by pipes
+- examples
+  - BASH
+  - other UNIX-like shells
+  - `ps aux | grep william | sort | less`
+- advantages
+  - good for streams of data
+- disadvantages
+  - not good for complex interactions between filters
