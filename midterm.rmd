@@ -189,8 +189,15 @@ header-includes: |
   \renewcommand{\sectionautorefname}{Section}
   \renewcommand{\subsectionautorefname}{Subection}
   \renewcommand{\subsubsectionautorefname}{Subection}
-  \renewcommand{\paragraph}{Paragraph}
-  \renewcommand{\subparagraph}{Subparagraph}
+  \renewcommand{\paragraphautorefname}{}
+  \renewcommand{\subparagraphautorefname}{}
+
+  \usepackage{nameref}
+
+  \makeatletter
+  \renewcommand{\theparagraph}{\bfseries \@currentlabelname}
+  \renewcommand{\thesubparagraph}{\itshape \@currentlabelname}
+  \makeatother
   ```
 output:
   pdf_document:
@@ -511,3 +518,50 @@ library(kableExtra)
 
 
 # High Level System Design
+
+## Subsystem Decomposition
+
+- subsystem = group of *related* classes
+  - logical = no run-time equivalent
+  - physical = run-time equivalent
+
+### Coupling and Cohesion
+- coupling = how dependent is the subsystem on other subsystems?
+- cohesion = how dependent is the subsystem on its components
+- we want
+  - **high cohesion**
+  - **low coupling**
+
+### Layers and Partitions
+
+- layer
+  - group of subsystems providing related services
+  - depends on lower level layers
+  - knows nothing about higher level layers
+- closed architecture
+  - layer **only** uses layer *immediately* below it
+  - loose coupling
+  - overhead
+- open architecture
+  - layer uses any layers below it
+- partitioning
+  - group of peer subsystems
+  - very loosely coupled
+  - can operate independently of each other
+
+### Architecture Styles
+- grouping subsystems at the highest level
+
+#### Repository
+
+#### Model/view/controller (MVC)
+
+#### Client-server
+
+#### Peer-to-peer
+
+#### Three-tier
+
+#### Four-tier
+
+#### Pipe and filter
